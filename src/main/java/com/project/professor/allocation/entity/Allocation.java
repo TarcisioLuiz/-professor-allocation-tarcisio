@@ -1,5 +1,6 @@
 package com.project.professor.allocation.entity;
 
+
 import java.time.DayOfWeek;
 import java.util.Date;
 
@@ -36,6 +37,9 @@ public class Allocation {
 	
 	@Column(name = "course_id", nullable = false)
 	private Long courseId;
+	
+	@Column(name = "professor_id", nullable = false)
+	private Long professorId;
 	
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "course_id", insertable = false, updatable = false, nullable = false)
@@ -87,6 +91,40 @@ public class Allocation {
 
 	public void setEnd(Date end) {
 		this.end = end;
+	}
+
+	public Long getCourseId() {
+		return courseId;
+	}
+
+	public void setCourseId(Long courseId) {
+		this.courseId = courseId;
+	}
+
+	public Long getProfessorId() {
+		return professorId;
+	}
+
+	public void setProfessorId(Long professorId) {
+		this.professorId = professorId;
+	}
+	
+	
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
 	}
 
 	@Override
