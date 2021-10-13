@@ -1,5 +1,7 @@
 package com.project.professor.allocation.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.project.professor.allocation.entity.Course;
@@ -15,8 +17,40 @@ public class CourseService {
 		this.repository = repository;
 	}
 	
+	public List<Course> findAll() {
+		List<Course> courses = repository.findAll();
+		return courses;
+	}
+
 	public Course findById(Long id) {
-		Course course = repository.findById(id).orElse(null);
-		return course;
+		return repository.findById(id).orElse(null);
+	}
+
+	public Course create(Course course) {
+		course.setId(null);
+		return save(course);
+	}
+
+	public Course update(Course course) {
+		if (repository.existsById(course.getId())) {
+			return save(course);
+			
+		}
+		return null;
+	}
+
+	public Course save(Course course) {
+		Course crsSave = repository.save(course);
+		return crsSave;
+	}
+	
+	public void delete(Long courseId) {
+		if (repository.existsById(courseId)) {
+			repository.deleteById(courseId);
+		}
+	}
+	
+	public void deleteAll() {
+		repository.deleteAllInBatch();
 	}
 }
