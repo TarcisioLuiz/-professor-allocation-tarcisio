@@ -39,7 +39,7 @@ public class CourseService {
 		return null;
 	}
 
-	public Course save(Course course) {
+	private Course save(Course course) {
 		Course crsSave = repository.save(course);
 		return crsSave;
 	}

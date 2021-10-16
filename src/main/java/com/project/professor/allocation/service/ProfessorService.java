@@ -40,7 +40,7 @@ public class ProfessorService {
 		return null;
 	}
 
-	public Professor save(Professor professor) {
+	private Professor save(Professor professor) {
 		Professor profSave = repository.save(professor);
 		Department department = departmentService.findById(professor.getDepartmentId());
 		profSave.setDepartment(department);

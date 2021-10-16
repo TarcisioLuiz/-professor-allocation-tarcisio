@@ -34,7 +34,7 @@ public class DepartmentServiceTest {
         Department department = new Department();
         department.setId(null);
         department.setName("Computação 1");
-        department = service.save(department);
+        department = service.create(department);
         System.out.println(department);
     }
 

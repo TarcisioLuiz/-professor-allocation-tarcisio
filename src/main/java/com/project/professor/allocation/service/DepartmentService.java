@@ -37,7 +37,7 @@ public class DepartmentService {
 		return null;
 	}
 
-	public Department save(Department department) {
+	private Department save(Department department) {
 		return repository.save(department);
 	}
 	
