@@ -37,7 +37,7 @@ public class ProfessorServiceTest {
         professor.setCpf("111.111.111-11");
         professor.setDepartmentId(1L);
 
-        professor = service.save(professor);
+        professor = service.create(professor);
         System.out.println(professor);
     }
 

@@ -34,7 +34,7 @@ public class CourseServiceTest {
         Course course = new Course();
         course.setId(null);
         course.setName("Java");
-        course = service.save(course);
+        course = service.create(course);
         System.out.println(course);
     }
 

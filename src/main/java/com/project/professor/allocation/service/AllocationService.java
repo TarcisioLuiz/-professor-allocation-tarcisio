@@ -66,7 +66,7 @@ public class AllocationService {
 		repository.deleteAllInBatch();
 	}
 	//a "!" serve para negar o resultado retornado assim se vinher true ele dira que é false e vice versa
-	public Allocation save(Allocation allocation) {
+	private Allocation save(Allocation allocation) {
 		if (!isEndHourGreaterThanStartHour(allocation) || hasCollision(allocation)) {
             throw new RuntimeException();
         } else {
@@ -80,12 +80,12 @@ public class AllocationService {
 	}
 	
 	// vai olhar se a hora final é maior que a hora inicial
-	boolean isEndHourGreaterThanStartHour(Allocation allocation) {
+	private boolean isEndHourGreaterThanStartHour(Allocation allocation) {
         return allocation != null && allocation.getStart() != null && allocation.getEnd() != null
                 && allocation.getEnd().compareTo(allocation.getStart()) > 0;
     }//se tudo tiver ok ele vai retornar true
 	
-	boolean hasCollision(Allocation newAllocation) {
+	private boolean hasCollision(Allocation newAllocation) {
         boolean hasCollision = false;
 
         //pega todas as alocações do professor
