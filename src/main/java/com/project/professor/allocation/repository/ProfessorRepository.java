@@ -14,17 +14,4 @@ public interface ProfessorRepository extends JpaRepository<Professor, Long>{
 	List<Professor> findByNameContainingIgnoreCase(String name);
 	
 	List<Professor> findByDepartmentId(Long department);
-	
-	Professor create(Professor professor);
-	
-	List<Professor> findAll();
-	
-	Optional<Professor> findById(Long id);
-	
-	Professor update(Professor professor);
-	
-	void delete(Long id);
-	
-	void deleteAllInBatch (Long id);
-	
 }
