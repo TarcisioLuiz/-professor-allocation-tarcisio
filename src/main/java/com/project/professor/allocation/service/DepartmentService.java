@@ -17,8 +17,12 @@ public class DepartmentService {
 		this.repository = repository;
 	}
 	
-	public List<Department> findAll() {
-		return repository.findAll();
+	public List<Department> findAll(String name) {
+		if (name == null) {
+            return repository.findAll();
+        } else {
+            return repository.findByNameContainingIgnoreCase(name);
+        }
 	}
 
 	public Department findById(Long id) {
@@ -41,7 +45,7 @@ public class DepartmentService {
 		return repository.save(department);
 	}
 	
-	public void delete(Long departmentId) {
+	public void deleteById(Long departmentId) {
 		if (repository.existsById(departmentId)) {
 			repository.deleteById(departmentId);
 		}

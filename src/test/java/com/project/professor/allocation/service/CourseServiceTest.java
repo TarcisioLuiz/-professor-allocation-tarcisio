@@ -48,9 +48,9 @@ public class CourseServiceTest {
     }
 
     @Test
-    public void delete() {
+    public void deleteById() {
         Long id = 1L;
-        service.delete(id);
+        service.deleteById(id);
     }
 
     @Test

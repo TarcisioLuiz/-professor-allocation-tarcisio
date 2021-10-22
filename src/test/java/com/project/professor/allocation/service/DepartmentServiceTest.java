@@ -18,7 +18,7 @@ public class DepartmentServiceTest {
 
     @Test
     public void findAll() {
-        List<Department> departments = service.findAll();
+        List<Department> departments = service.findAll(null);
         departments.forEach(System.out::println);
     }
 
@@ -48,9 +48,9 @@ public class DepartmentServiceTest {
     }
 
     @Test
-    public void delete() {
+    public void deleteById() {
         Long id = 1L;
-        service.delete(id);
+        service.deleteById(id);
     }
 
     @Test

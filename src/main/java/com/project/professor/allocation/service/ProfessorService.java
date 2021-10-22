@@ -47,7 +47,7 @@ public class ProfessorService {
 		return profSave;
 	}
 	
-	public void delete(Long professorId) {
+	public void deleteById(Long professorId) {
 		if (repository.existsById(professorId)) {
 			repository.deleteById(professorId);
 		}

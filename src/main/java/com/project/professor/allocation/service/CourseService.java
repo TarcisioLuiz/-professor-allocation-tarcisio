@@ -44,7 +44,7 @@ public class CourseService {
 		return crsSave;
 	}
 	
-	public void delete(Long courseId) {
+	public void deleteById(Long courseId) {
 		if (repository.existsById(courseId)) {
 			repository.deleteById(courseId);
 		}

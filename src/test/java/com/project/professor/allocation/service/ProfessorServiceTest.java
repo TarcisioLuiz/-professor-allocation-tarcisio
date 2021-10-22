@@ -54,9 +54,9 @@ public class ProfessorServiceTest {
     }
 
     @Test
-    public void delete() {
+    public void deleteById() {
         Long id = 1L;
-        service.delete(id);
+        service.deleteById(id);
         Professor professor = service.findById(id);
         System.out.println(professor);
     }
