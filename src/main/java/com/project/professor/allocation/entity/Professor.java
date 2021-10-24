@@ -24,9 +24,11 @@ public class Professor {
 	@Column(name = "cpf_mamute", unique = true, nullable = false, length = 14)
 	private String cpf;
 	
+	@JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
 	@Column(name = "department_id", nullable = false)
 	private Long departmentId;
 	
+	@JsonProperty(access=JsonProperty.Access.READ_ONLY)
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "department_id", insertable = false, updatable = false, nullable = false)
 	private Department department;
